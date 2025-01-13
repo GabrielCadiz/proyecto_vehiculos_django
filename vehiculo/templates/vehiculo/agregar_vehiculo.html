@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Vehículo{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Agregar Vehículo</h2>
+
+    {% if success %}
+        <div class="alert alert-success" role="alert">
+            Vehículo guardado exitosamente.
+        </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
